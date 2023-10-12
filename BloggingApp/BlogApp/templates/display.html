@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table,tr,th,td{
+			border:2px solid black;
+		}
+		body{
+			background-color:#FFA600;
+			font-size: 30px;
+		}
+	</style>
+	<title>Display Page</title>
+</head>
+<body>
+		<center>
+		<table>
+			<th>Writer Name</th>
+			<th>Blog</th>
+			<th>Sale Price</th>
+			<th>No of Blog</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			<th>Buy</th>
+			{% for d in data %}
+			<tr>
+				<td>{{d.writer}}</td>
+				<td>{{d.blog}}</td>
+				<td>{{d.price}}</td>
+				<td>{{d.noblog}}</td>
+				<td><a href="/edit/?id={{d.id}}">Edit</a></td>
+				<td><a href="/delete/?id={{d.id}}">Delete</a></td>
+				<td><a href="/buy/?id={{d.id}}">buy</a></td>
+
+
+			</tr>
+			{% endfor %}
+		</table><br><br>
+		 Search :-<input type="search" name="search"><br><br>
+		<button><a href="/">Home Page</a></button>
+		</center>
+
+</body>
+</html>
